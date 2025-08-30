@@ -18,6 +18,7 @@ jobs:
       packages: write
       id-token: write # for attestation
       attestations: write # Required for creating attestations
+      security-events: write # Required for uploading code scanning results
 
     steps:
     - name: Checkout repository
