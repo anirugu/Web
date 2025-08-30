@@ -1,4 +1,5 @@
 using Web.Components;
+using Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,9 @@ builder.Services.AddHealthChecks();
 // Add API explorer and Swagger services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+// Add blog service
+builder.Services.AddScoped<IBlogService, BlogService>();
 
 var app = builder.Build();
 

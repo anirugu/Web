@@ -1,0 +1,49 @@
+@page "/blog"
+@inject IBlogService BlogService
+
+<PageTitle>Blog - Anirudha Gupta</PageTitle>
+
+<div class="blog-container">
+    <header class="blog-header">
+        <h1>Blog</h1>
+    </header>
+
+    <main class="blog-content">
+        @if (postsByYear?.Any() == true)
+        {
+            @foreach (var yearGroup in postsByYear.OrderByDescending(x => x.Key))
+            {
+                <section class="year-section">
+                    <h2 class="year-heading">@yearGroup.Key</h2>
+                    
+                    <div class="posts-list">
+                        @foreach (var post in yearGroup.Value)
+                        {
+                            <article class="post-item">
+                                <h3 class="post-title">
+                                    <a href="/blog/@post.Slug">@post.Title</a>
+                                </h3>
+                                <time class="post-date" datetime="@post.PublishedDate.ToString("yyyy-MM-dd")">
+                                    @post.PublishedDate.ToString("MMMM d, yyyy")
+                                </time>
+                            </article>
+                        }
+                    </div>
+                </section>
+            }
+        }
+        else
+        {
+            <p class="no-posts">No blog posts found.</p>
+        }
+    </main>
+</div>
+
+@code {
+    private Dictionary<int, List<Web.Models.BlogPost>>? postsByYear;
+
+    protected override async Task OnInitializedAsync()
+    {
+        postsByYear = await BlogService.GetPostsByYearAsync();
+    }
+}
