@@ -1,0 +1,101 @@
+/* Hero section */
+.hero-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: #666;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.6;
+}
+
+.hero-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-links a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.hero-links a:hover {
+    color: #0052a3;
+    text-decoration: underline;
+}
+
+/* Content sections */
+.content-section {
+    margin-bottom: 2rem;
+}
+
+.content-section h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.content-section h3 a {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.content-section h3 a:hover {
+    color: #0052a3;
+    text-decoration: underline;
+}
+
+.content-section p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Section headings */
+.section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 3rem 0 1.5rem 0;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+/* Footer heart */
+.footer-heart {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    font-size: 1.5rem;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-links {
+        flex-direction: column;
+    }
+    
+    .section-heading {
+        font-size: 1.25rem;
+    }
+}
